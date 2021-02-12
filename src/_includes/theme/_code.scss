@@ -1,0 +1,119 @@
+/*
+
+Custom syntax highlighting
+
+*/
+
+
+/*
+gray: #2C313E,
+purple: #60569C,
+green: #5C6443,
+yellow: #DAC935,
+offwhite: #EBECF0
+*/
+
+
+.hljs {
+  --font-wght: #{$fontWeightNormal};
+
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: rgba($-shadowColor, .25);
+  color: $mainColor;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  opacity: .7;
+}
+
+.hljs-template-tag {
+  opacity: .7;
+}
+
+.hljs-number {
+  opacity: .8;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  opacity: .8;
+}
+
+.hljs-literal {
+  opacity: .6;
+}
+
+.hljs-subst {
+  opacity: .6;
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  opacity: .8;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  opacity: .8;
+}
+
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  opacity: .85;
+}
+
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  opacity: .6;
+}
+
+.hljs-emphasis {
+  --font-slnt: -15;
+}
+
+.hljs-strong {
+  --font-wght: #{$fontWeightBold};
+}
+
+.hljs mark {
+  position: relative;
+  color: $-backgroundColor;
+  background-color: transparent;
+
+  * {
+    color: inherit;
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    width: calc(100% + .3rem);
+    display: block;
+    position: absolute;
+    top: -.2em;
+    right: -0.15rem;
+    bottom: -.2em;
+    left: -0.15rem;
+    z-index: 0;
+    background-color: $-linkColorHover;
+  }
+
+  &.alt::before {
+    background-color: $shadowColor;
+  }
+}

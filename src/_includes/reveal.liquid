@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>{{ slides.title }}</title>
+    <meta name="description" content="{{ slides.description }}">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window
+        .location
+        .search
+        .match(/print-pdf/gi)
+          ? 'css/print/pdf.css'
+          : 'css/print/paper.css';
+      document
+        .getElementsByTagName('head')[0]
+        .appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        {% for slide in collections.slides %}
+          {% include _section %}
+        {% endfor %}
+      </div>
+
+      <footer class="colophon">
+        <div class="colophon__logo">
+          <img src="images/emberconf-logo.svg" alt="Virtual EmberConf 2021" />
+        </div>
+
+        <a href="https://jdsteinbach.com/intro-11ty-slides/#/" class="colophon__link">jds.li/intro-11ty</a>
+      </footer>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        height: 600,
+        width: 1200,
+        hash: true,
+        dependencies: [
+          {
+            src: 'plugin/notes/notes.js',
+            async: true
+          }
+        ],
+        transition: 'fade'
+      });
+    </script>
+  </body>
+</html>

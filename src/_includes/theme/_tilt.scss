@@ -1,0 +1,35 @@
+.v-tilt {
+  margin: -1em 0;
+  transform: translate(0, var(--translateY, 25%)) rotate(-12.5deg) scale(var(--scale, 1));
+  transform-origin: center;
+  border: 1em solid rgba($linkColor, .3);
+  border-width: 1em 0;
+}
+
+.v-tilt--large {
+  --scale: 1.75;
+  --translateY: 46%;
+}
+
+h3.v-tilt--large {
+  --translateY: 55%;
+}
+
+.a-blast-in {
+  position: relative;
+  opacity: 0;
+  transform: translate(0, 0) scale(0);
+  transition: transform .5s cubic-bezier(1,.5,.25,1.5), opacity .3s linear !important;
+
+  &.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.a-blast-in--big {
+  &.visible {
+    transform: translate(0, -.025em) scale(2);
+    z-index: 2;
+  }
+}
