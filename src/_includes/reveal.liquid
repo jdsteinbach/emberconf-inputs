@@ -40,10 +40,10 @@
 
       <footer class="colophon">
         <div class="colophon__logo">
-          <img src="images/emberconf-logo.svg" alt="Virtual EmberConf 2021" />
+          <img src="{{ slides.colophonImage }}" alt="{{ slides.colophonAlt }}" />
         </div>
 
-        <a href="https://jdsteinbach.com/intro-11ty-slides/#/" class="colophon__link">jds.li/intro-11ty</a>
+        <a href="{{ slides.colophonURL }}" class="colophon__link">{{ slides.colophonShortURL }}</a>
       </footer>
     </div>
 
@@ -57,12 +57,6 @@
         height: 600,
         width: 1200,
         hash: true,
-        dependencies: [
-          {
-            src: 'plugin/notes/notes.js',
-            async: true
-          }
-        ],
         transition: 'fade'
       });
     </script>

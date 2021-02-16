@@ -12,12 +12,13 @@
 
 @import "fonts";
 
-$-primaryColor: #e04e39;
-$-secondaryColor: #1e719b;
+$-primaryColor: rgb(225, 93, 68);
+$-secondaryColor: rgb(153, 139, 184);
 
 // Light Colors
 $-mainColor: #131313;
 $-headingColor: mix($-primaryColor, $-mainColor, 95%);
+$-headingColor: $-primaryColor;
 
 $-backgroundColor: #ececec;
 $-backgroundColorAlt: rgba($-headingColor, .25);
@@ -33,11 +34,11 @@ $-codeColor: mix($-shadowColor, $-mainColor, 25%);
 
 //Dark Colors
 $-mainColor--dark: #ececec;
-$-headingColor--dark: mix($-primaryColor, $-mainColor--dark, 75%);
+$-headingColor--dark: $-primaryColor;
 
 $-backgroundColor--dark: #131313;
 $-backgroundColorAlt--dark: rgba($-headingColor--dark, .25);
-$-shadowColorAlt--dark: darken($-secondaryColor, 20%);
+$-shadowColorAlt--dark: darken($-secondaryColor, 40%);
 $-shadowColor--dark: $-primaryColor;
 
 $-linkColor--dark: lighten($-secondaryColor, 30%);
@@ -112,13 +113,13 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 700;
 
-$heading1Size: 2em;
-$heading2Size: 1.75em;
-$heading3Size: 1.5em;
+$heading1Size: 3em;
+$heading2Size: 2.5em;
+$heading3Size: 1.75em;
 $heading4Size: 1.25em;
 
-$fontWeightLight: 400;
-$fontWeightNormal: 550;
+$fontWeightLight: 200;
+$fontWeightNormal: 450;
 $fontWeightBold: 700;
 
 $blockMargin: $mainFontSize / 1.5;
@@ -155,11 +156,11 @@ body {
     "CASL" var(--font-casl, 0),
     "wght" var(--font-wght, #{$fontWeightLight}),
     "slnt" var(--font-slnt, 0),
-    "ital" var(--font-ital, .5);
+    "CRSV" var(--font-ital, 0);
   }
 
   section {
-    --font-wght: #{$fontWeightLight};
+    --font-wght: #{$fontWeightNormal};
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased;
@@ -193,7 +194,7 @@ body {
     }
 
     h2 {
-      --font-wght: #{$fontWeightNormal};
+      --font-wght: #{$fontWeightBold};
       --text-shadow-color: #{$shadowColor};
 
       color: $mainColor;
@@ -211,7 +212,7 @@ body {
     }
 
     h3 {
-      --font-wght: #{$fontWeightNormal};
+      --font-wght: #{$fontWeightBold};
 
       em {
         --font-wght: #{$fontWeightBold};
@@ -219,10 +220,6 @@ body {
 
         color: $mainColor;
       }
-    }
-
-    h3 {
-      --font-wght: #{$fontWeightNormal};
 
       &.big {
         font-size: $heading2Size;
@@ -248,7 +245,7 @@ body {
 
     p,
     li {
-      --font-wght: #{$fontWeightLight};
+      --font-wght: #{$fontWeightNormal};
 
       margin-left: auto;
       margin-right: auto;
@@ -286,14 +283,36 @@ body {
     }
 
     blockquote {
-      padding: .5em;
-      background-color: $backgroundColorAlt;
-    }
+      --font-slnt: 0;
+      --font-casl: .5;
+      --font-ital: 1;
 
-    blockquote > p {
-      font-size: $heading1Size;
-      text-shadow: .5px .5px 0 $shadowColor,
-                  1px 1px 0 $shadowColor;
+      padding: .5em 3rem;
+      font-style: normal;
+      background-color: $backgroundColorAlt;
+
+      > p {
+        --font-wght: #{$fontWeightLight};
+
+        font-size: $heading2Size;
+      }
+
+      cite {
+        --font-slnt: 1;
+        --font-casl: 0;
+        --font-ital: 0;
+        --font-wght: #{$fontWeightNormal};
+
+        margin-top: 1em;
+        display: block;
+        font-style: italic;
+        font-size: $mainFontSize;
+        text-align: right;
+
+        &::before {
+          content: "~ ";
+        }
+      }
     }
 
     em {
@@ -351,6 +370,9 @@ body {
 
     pre {
       font-size: 1em;
+      display: inline-block;
+      width: auto;
+      max-width: 25em;
 
       &.small {
         font-size: .825em;
@@ -363,7 +385,6 @@ body {
       code {
         max-height: 100%;
         font-size: 75%;
-        background-color: rgba($mainColor, .05);
 
         &::before,
         &::after {
@@ -402,6 +423,13 @@ body {
       display: none;
     }
 
+    .sr-only {
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
+
     .invisible-hr {
       border: 0;
       height: 0;
@@ -425,12 +453,12 @@ body {
       backdrop-filter: blur(5px);
     }
 
-    .logo--dockyard {
-      margin-left: 1ch;
-      max-width: 1em;
+    .auth0-logo {
+      margin-bottom: .1em;
       max-height: 1em;
       display: inline-block;
       vertical-align: middle;
+      fill: $mainColor;
     }
   }
 

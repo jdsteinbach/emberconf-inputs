@@ -15,41 +15,42 @@ offwhite: #EBECF0
 
 
 .hljs {
-  --font-wght: #{$fontWeightNormal};
+  --font-wght: 350;
 
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: rgba($-shadowColor, .25);
-  color: $mainColor;
+  color: rgb(255, 250, 245);
+  background: rgb(17, 11, 34);
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-tag {
-  opacity: .7;
+  color: rgb(153, 139, 184);
 }
 
 .hljs-template-tag {
-  opacity: .7;
+  color: rgb(255, 250, 245);
 }
 
+.hljs-attr,
 .hljs-number {
-  opacity: .8;
+  color: rgb(140, 175, 90);
 }
 
 .hljs-variable,
 .hljs-template-variable,
 .hljs-attribute {
-  opacity: .8;
+  color: rgb(153, 139, 184);
 }
 
 .hljs-literal {
-  opacity: .6;
+  color: rgb(247, 165, 89);
 }
 
 .hljs-subst {
-  opacity: .6;
+  color: rgb(153, 139, 184);
 }
 
 .hljs-title,
@@ -58,27 +59,27 @@ offwhite: #EBECF0
 .hljs-selector-class,
 .hljs-section,
 .hljs-type {
-  opacity: .8;
+  color: rgb(140, 175, 90);
 }
 
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link {
-  opacity: .8;
+  color: rgb(247, 165, 89);
 }
 
 .hljs-deletion,
 .hljs-string,
 .hljs-built_in,
 .hljs-builtin-name {
-  opacity: .85;
+  color: rgb(245, 203, 97);
 }
 
 .hljs-addition,
 .hljs-comment,
 .hljs-quote,
 .hljs-meta {
-  opacity: .6;
+  color: rgb(255, 250, 245);
 }
 
 .hljs-emphasis {
@@ -115,5 +116,28 @@ offwhite: #EBECF0
 
   &.alt::before {
     background-color: $shadowColor;
+  }
+}
+
+.code-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: .8em;
+
+  p {
+    margin: .5rem 1.5rem;
+    width: auto;
+    display: inline-block;
+    font-size: 1.25em;
+  }
+
+  hr {
+    flex: 1 0 100%;
+  }
+
+  &.code-list--small p {
+    font-size: .75em;
   }
 }
