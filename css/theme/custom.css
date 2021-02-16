@@ -1,0 +1,807 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+@font-face {
+  font-family: Recursive;
+  src: url("../../fonts/recursive.woff2") format("woff2-variations");
+  font-weight: 300 900;
+}
+:root {
+  --mainColor: #131313;
+  --headingColor: #e15d44;
+  --backgroundColor: #ececec;
+  --backgroundColorAlt: rgba(225, 93, 68, 0.25);
+  --shadowColor: #e15d44;
+  --shadowColorAlt: #131313;
+  --linkColor: #998bb8;
+  --linkColorHover: #7d6ba5;
+  --selectionBackgroundColor: #d1cadf;
+  --accentColor: #703429;
+  --codeColor: #47261f;
+  --dyColor: #000;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mainColor: #ececec;
+    --headingColor: #e15d44;
+    --backgroundColor: #131313;
+    --backgroundColorAlt: rgba(225, 93, 68, 0.25);
+    --shadowColor: #e15d44;
+    --shadowColorAlt: #362d4a;
+    --linkColor: #eceaf2;
+    --linkColorHover: white;
+    --selectionBackgroundColor: white;
+    --accentColor: #e7aca0;
+    --codeColor: #e9c8c2;
+    --dyColor: #fff;
+  }
+}
+
+section.has-light-background,
+section.has-light-background h1,
+section.has-light-background h2,
+section.has-light-background h3,
+section.has-light-background h4,
+section.has-light-background h5,
+section.has-light-background h6 {
+  color: var(--backgroundColor);
+}
+
+body {
+  font-family: Recursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+.reveal {
+  /*
+
+  Custom syntax highlighting
+
+  */
+  /*
+  gray: #2C313E,
+  purple: #60569C,
+  green: #5C6443,
+  yellow: #DAC935,
+  offwhite: #EBECF0
+  */
+}
+.reveal[aria-hidden=true], .reveal[aria-hidden=true] * {
+  pointer-events: none !important;
+}
+.reveal *,
+.reveal ::before,
+.reveal ::after {
+  font-variation-settings: "MONO" var(--font-mono, 0), "CASL" var(--font-casl, 0), "wght" var(--font-wght, 200), "slnt" var(--font-slnt, 0), "CRSV" var(--font-ital, 0);
+}
+.reveal section {
+  --font-wght: 450;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-feature-settings: liga frac ordn;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+}
+.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  --text-shadow-color: var(--shadowColorAlt);
+}
+.reveal section h1,
+.reveal section h1 em,
+.reveal section h2,
+.reveal section h2 em,
+.reveal section h3,
+.reveal section h3 em {
+  text-shadow: 0.5px 0.5px 0 var(--text-shadow-color), 1px 1px 0 var(--text-shadow-color), 1.5px 1.5px 0 var(--text-shadow-color), 2px 2px 0 var(--text-shadow-color);
+}
+.reveal section h1 {
+  --font-wght: 700;
+  margin: 0;
+}
+.reveal section h1 em {
+  --text-shadow-color: var(--shadowColor);
+  color: var(--mainColor);
+}
+.reveal section h2 {
+  --font-wght: 700;
+  --text-shadow-color: var(--shadowColor);
+  color: var(--mainColor);
+}
+.reveal section h2 em {
+  --font-wght: 700;
+  --text-shadow-color: var(--shadowColorAlt);
+  color: var(--headingColor);
+}
+.reveal section h2.big {
+  font-size: 3em;
+}
+.reveal section h3 {
+  --font-wght: 700;
+}
+.reveal section h3 em {
+  --font-wght: 700;
+  --text-shadow-color: var(--shadowColor);
+  color: var(--mainColor);
+}
+.reveal section h3.big {
+  font-size: 2.5em;
+}
+.reveal section h4 {
+  font-size: 1.25em;
+}
+.reveal section h1 + p, .reveal section h1 + ul, .reveal section h1 + pre,
+.reveal section h2 + p,
+.reveal section h2 + ul,
+.reveal section h2 + pre,
+.reveal section h3 + p,
+.reveal section h3 + ul,
+.reveal section h3 + pre,
+.reveal section h4 + p,
+.reveal section h4 + ul,
+.reveal section h4 + pre,
+.reveal section h5 + p,
+.reveal section h5 + ul,
+.reveal section h5 + pre,
+.reveal section h6 + p,
+.reveal section h6 + ul,
+.reveal section h6 + pre {
+  margin-top: 1em;
+}
+.reveal section p,
+.reveal section li {
+  --font-wght: 450;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+  max-width: 100%;
+  text-align: center;
+}
+.reveal section p em,
+.reveal section li em {
+  --font-wght: 700;
+  color: var(--accentColor);
+}
+.reveal section p code,
+.reveal section li code {
+  --font-wght: 450;
+}
+.reveal section p a,
+.reveal section li a {
+  text-decoration: underline;
+}
+.reveal section li {
+  margin: 1.3333333333rem 0;
+  display: block;
+  text-align: left;
+}
+.reveal section li:first-child {
+  margin-top: 0;
+}
+.reveal section ul {
+  margin: 0;
+}
+.reveal section blockquote {
+  --font-slnt: 0;
+  --font-casl: .5;
+  --font-ital: 1;
+  padding: 0.5em 3rem;
+  font-style: normal;
+  background-color: var(--backgroundColorAlt);
+}
+.reveal section blockquote > p {
+  --font-wght: 200;
+  font-size: 2.5em;
+}
+.reveal section blockquote cite {
+  --font-slnt: 1;
+  --font-casl: 0;
+  --font-ital: 0;
+  --font-wght: 450;
+  margin-top: 1em;
+  display: block;
+  font-style: italic;
+  font-size: 2rem;
+  text-align: right;
+}
+.reveal section blockquote cite::before {
+  content: "~ ";
+}
+.reveal section em {
+  --font-slnt: 0;
+  font-style: normal;
+}
+.reveal section .big-p {
+  --font-wght: 700;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.reveal section .output {
+  background-color: rgba(var(--mainColor), 0.1);
+  text-align: left;
+  font-size: 0.8em;
+}
+.reveal section .output > * {
+  background-color: var(--shadowColor);
+}
+.reveal section code {
+  --font-mono: 1;
+  --font-wght: 450;
+  font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
+  color: var(--codeColor);
+}
+.reveal section code::before, .reveal section code::after {
+  --font-wght: 200;
+  content: "`";
+  opacity: 0.6;
+}
+.reveal section code mark {
+  background-color: transparent;
+}
+.reveal section h1 code,
+.reveal section h2 code,
+.reveal section h3 code,
+.reveal section h4 code {
+  --font-wght: 700;
+  color: inherit;
+}
+.reveal section pre {
+  font-size: 1em;
+  display: inline-block;
+  width: auto;
+  max-width: 25em;
+}
+.reveal section pre.small {
+  font-size: 0.825em;
+}
+.reveal section pre.tiny {
+  font-size: 0.7em;
+}
+.reveal section pre code {
+  max-height: 100%;
+  font-size: 75%;
+}
+.reveal section pre code::before, .reveal section pre code::after {
+  display: none;
+}
+.reveal section table th {
+  vertical-align: bottom;
+}
+.reveal section table th,
+.reveal section table td {
+  text-align: center;
+}
+.reveal section .t-emphasis {
+  --font-wght: 700;
+  font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
+  color: var(--accentColor);
+  border-bottom: 0.125em solid #998bb8;
+}
+.reveal section .t-bold {
+  --font-wght: 700;
+}
+.reveal section .center {
+  text-align: center;
+}
+.reveal section .hidden-label {
+  display: none;
+}
+.reveal section .sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.reveal section .invisible-hr {
+  border: 0;
+  height: 0;
+  background: transparent;
+}
+.reveal section .d-block {
+  display: block;
+}
+.reveal section .mb-1 {
+  margin-bottom: 1.3333333333rem;
+}
+.reveal section .mb-2 {
+  margin-bottom: 2.6666666667rem;
+}
+.reveal section .bg-light {
+  background: rgba(var(--mainColor), 0.7);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.reveal section .auth0-logo {
+  margin-bottom: 0.1em;
+  max-height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: var(--mainColor);
+}
+.reveal .hljs {
+  --font-wght: 350;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #fffaf5;
+  background: #110b22;
+}
+.reveal .hljs-keyword,
+.reveal .hljs-selector-tag,
+.reveal .hljs-tag {
+  color: #998bb8;
+}
+.reveal .hljs-template-tag {
+  color: #fffaf5;
+}
+.reveal .hljs-attr,
+.reveal .hljs-number {
+  color: #8caf5a;
+}
+.reveal .hljs-variable,
+.reveal .hljs-template-variable,
+.reveal .hljs-attribute {
+  color: #998bb8;
+}
+.reveal .hljs-literal {
+  color: #f7a559;
+}
+.reveal .hljs-subst {
+  color: #998bb8;
+}
+.reveal .hljs-title,
+.reveal .hljs-name,
+.reveal .hljs-selector-id,
+.reveal .hljs-selector-class,
+.reveal .hljs-section,
+.reveal .hljs-type {
+  color: #8caf5a;
+}
+.reveal .hljs-symbol,
+.reveal .hljs-bullet,
+.reveal .hljs-link {
+  color: #f7a559;
+}
+.reveal .hljs-deletion,
+.reveal .hljs-string,
+.reveal .hljs-built_in,
+.reveal .hljs-builtin-name {
+  color: #f5cb61;
+}
+.reveal .hljs-addition,
+.reveal .hljs-comment,
+.reveal .hljs-quote,
+.reveal .hljs-meta {
+  color: #fffaf5;
+}
+.reveal .hljs-emphasis {
+  --font-slnt: -15;
+}
+.reveal .hljs-strong {
+  --font-wght: 700;
+}
+.reveal .hljs mark {
+  position: relative;
+  color: #ececec;
+  background-color: transparent;
+}
+.reveal .hljs mark * {
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+.reveal .hljs mark::before {
+  content: "";
+  width: calc(100% + .3rem);
+  display: block;
+  position: absolute;
+  top: -0.2em;
+  right: -0.15rem;
+  bottom: -0.2em;
+  left: -0.15rem;
+  z-index: 0;
+  background-color: #7d6ba5;
+}
+.reveal .hljs mark.alt::before {
+  background-color: var(--shadowColor);
+}
+.reveal .code-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+}
+.reveal .code-list p {
+  margin: 0.5rem 1.5rem;
+  width: auto;
+  display: inline-block;
+  font-size: 1.25em;
+}
+.reveal .code-list hr {
+  flex: 1 0 100%;
+}
+.reveal .code-list.code-list--small p {
+  font-size: 0.75em;
+}
+.reveal .colophon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+.reveal .colophon::after {
+  content: "";
+  display: block;
+  width: 15vw;
+}
+.reveal .colophon__logo {
+  width: 15vw;
+  height: 8vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left center;
+     object-position: left center;
+}
+.reveal .colophon__link {
+  --font-mono: 1;
+  --font-slnt: -15;
+  opacity: 0.75;
+  font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
+  font-size: 4vmin;
+}
+.reveal .v-tilt {
+  margin: -1em 0;
+  transform: translate(0, var(--translateY, 25%)) rotate(-12.5deg) scale(var(--scale, 1));
+  transform-origin: center;
+  border: 1em solid rgba(153, 139, 184, 0.3);
+  border-width: 1em 0;
+}
+.reveal .v-tilt--large {
+  --scale: 1.25;
+  --translateY: 20%;
+}
+.reveal h3.v-tilt--large {
+  --translateY: 55%;
+}
+.reveal .a-blast-in {
+  position: relative;
+  opacity: 0;
+  transform: translate(0, 0) scale(0);
+  transition: transform 0.5s cubic-bezier(1, 0.5, 0.25, 1.5), opacity 0.3s linear !important;
+}
+.reveal .a-blast-in.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal .a-blast-in--big.visible {
+  transform: translate(0, -0.025em) scale(2);
+  z-index: 2;
+}
+
+iframe {
+  border-width: 0;
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: var(--backgroundColor);
+  background-color: var(--backgroundColor);
+}
+
+.reveal {
+  font-family: Recursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 2rem;
+  font-weight: normal;
+  color: var(--mainColor);
+}
+
+::-moz-selection {
+  color: #fff;
+  background: var(--selectionBackgroundColor);
+  text-shadow: none;
+}
+
+::selection {
+  color: #fff;
+  background: var(--selectionBackgroundColor);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: var(--selectionBackgroundColor);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 1.3333333333rem;
+  color: var(--headingColor);
+  font-family: Recursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: 3em;
+}
+
+.reveal h2 {
+  font-size: 2.5em;
+}
+
+.reveal h3 {
+  font-size: 1.75em;
+}
+
+.reveal h4 {
+  font-size: 1.25em;
+}
+
+.reveal h1 {
+  text-shadow: none;
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 1.3333333333rem 0;
+  line-height: 1.3;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 1.3333333333rem auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 1.3333333333rem auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
+  text-transform: none;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #998bb8;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--linkColorHover);
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #705e99;
+}
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid var(--mainColor);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal a img {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #998bb8;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: #998bb8;
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #998bb8;
+}
+
+.reveal .progress span {
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--backgroundColor);
+  }
+}
