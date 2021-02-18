@@ -4,5 +4,5 @@
 <input
   type="tel"
   autocomplete="tel"
->
+/>
 ```
