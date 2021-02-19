@@ -3,5 +3,5 @@
 ```html
 <input
   type="date"
->
+/>
 ```
