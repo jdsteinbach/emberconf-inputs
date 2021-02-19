@@ -8,7 +8,7 @@
   pattern="\d*"
   minlength="1"
   maxlength="2"
->
+/>
 ```
 ```html
 <input
@@ -18,7 +18,7 @@
   pattern="\d*"
   minlength="1"
   maxlength="2"
->
+/>
 ```
 ```html
 <input
@@ -28,5 +28,5 @@
   pattern="\d*"
   minlength="4"
   maxlength="4"
->
+/>
 ```

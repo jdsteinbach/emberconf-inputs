@@ -6,5 +6,5 @@
   inputmode="decimal"
   pattern="\d*"
   autocomplete="one-time-code"
->
+/>
 ```

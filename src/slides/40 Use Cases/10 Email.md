@@ -1,9 +1,17 @@
 ### Email Address
 
-```html
-<input
-  type="email"
-  autocomplete="email"
-  inputmode="email"
->
-```
+<div class="keyboards">
+
+  ```html
+  <input
+    type="email"
+    autocomplete="email"
+    inputmode="email"
+  />
+  ```
+
+  ![Android keyboard: email](/images/android-email.png)
+
+  ![iOS keyboard: email](/images/ios-email.png)
+
+</div>

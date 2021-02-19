@@ -1,9 +1,18 @@
 ### Address
 
-```html
-<input
-  type="text"
-  inputmode="numeric"
-  autocomplete="street-address"
->
-```
+<div class="keyboards">
+
+  ```html
+  <input
+    type="text"
+    inputmode="numeric"
+    autocomplete=
+      "street-address"
+  />
+  ```
+
+  ![Android keyboard: address](/images/android-address.png)
+
+  ![iOS keyboard: address](/images/ios-address.png)
+
+</div>
