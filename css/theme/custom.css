@@ -252,7 +252,8 @@ body {
   font-size: 1em;
   display: inline-block;
   width: auto;
-  max-width: 25em;
+  overflow: initial;
+  max-width: 30em;
 }
 .reveal section pre.small {
   font-size: 0.825em;
@@ -456,6 +457,25 @@ body {
   opacity: 0.75;
   font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
   font-size: 4vmin;
+}
+.reveal .keyboards {
+  display: grid;
+  grid-template-columns: auto repeat(2, 20rem);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.reveal .keyboards > p {
+  margin: 0;
+}
+.reveal .keyboards img {
+  margin: 0;
+  border: 0;
+}
+.reveal .keyboards zcode {
+  overflow: initial;
+  word-wrap: normal;
+  white-space: normal;
 }
 .reveal .v-tilt {
   margin: -1em 0;
