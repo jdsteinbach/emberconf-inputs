@@ -6,7 +6,6 @@
   <input
     type="email"
     autocomplete="email"
-    inputmode="email"
   />
   ```
 
