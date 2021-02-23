@@ -4,8 +4,6 @@
 <input
   type="text"
   inputmode="decimal"
-  placeholder="MM"
-  pattern="\d*"
   minlength="1"
   maxlength="2"
 />
@@ -14,8 +12,6 @@
 <input
   type="text"
   inputmode="decimal"
-  placeholder="DD"
-  pattern="\d*"
   minlength="1"
   maxlength="2"
 />
@@ -24,8 +20,6 @@
 <input
   type="text"
   inputmode="decimal"
-  placeholder="YYYY"
-  pattern="\d*"
   minlength="4"
   maxlength="4"
 />

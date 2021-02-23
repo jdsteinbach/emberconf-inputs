@@ -20,7 +20,7 @@ module.exports = class {
     const compiledSass = sass.renderSync({
       file: rawFilepath,
       includePaths: [
-        'node_modules/reveal.js/css/theme/source'
+        'node_modules/reveal.js/css/theme'
       ]
     })
 

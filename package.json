@@ -27,6 +27,7 @@
     "sass": "^1.26.10"
   },
   "dependencies": {
-    "reveal.js": "^3.9.2"
+    "cheerio": "^1.0.0-rc.5",
+    "reveal.js": "^4.1.0"
   }
 }

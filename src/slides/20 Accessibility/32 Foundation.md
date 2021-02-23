@@ -1,3 +1,6 @@
+---
+data-auto-animate: true
+---
 ### Foundation
 
 ```hbs
