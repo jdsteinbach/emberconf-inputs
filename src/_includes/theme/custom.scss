@@ -6,8 +6,8 @@
 
 
 // Default mixins and settings -----------------
-@import "../template/mixins";
-@import "../template/settings";
+@import "template/mixins";
+@import "template/settings";
 // ---------------------------------------------
 
 @import "fonts";
@@ -287,14 +287,19 @@ body {
       --font-casl: .5;
       --font-ital: 1;
 
-      padding: .5em 3rem;
+      padding: .5em 1rem;
       font-style: normal;
       background-color: $backgroundColorAlt;
 
       > p {
         --font-wght: #{$fontWeightLight};
 
-        font-size: $heading2Size;
+        font-size: $heading3Size;
+
+        br {
+          display: block;
+          font-size: 1.5rem;
+        }
       }
 
       cite {
@@ -454,6 +459,12 @@ body {
       backdrop-filter: blur(5px);
     }
 
+    .complexity {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15ch, 1fr));
+      gap: 2rem 1rem;
+    }
+
     .auth0-logo {
       margin-bottom: .1em;
       max-height: 1em;
@@ -475,6 +486,6 @@ iframe {
 }
 
 // Theme template ------------------------------
-@import "../template/theme";
+@import "template/theme";
 
 // ---------------------------------------------

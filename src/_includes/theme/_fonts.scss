@@ -12,7 +12,7 @@
 }
 
 @include v-fonts(
-  Recursive,
+  "Recursive",
   "recursive.woff2",
   woff2-variations,
   $weight: 300 900
