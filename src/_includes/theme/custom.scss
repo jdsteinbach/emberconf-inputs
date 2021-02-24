@@ -308,11 +308,9 @@ body {
         --font-ital: 0;
         --font-wght: #{$fontWeightNormal};
 
-        margin-top: 1em;
         display: block;
         font-style: italic;
         font-size: $mainFontSize;
-        text-align: right;
 
         &::before {
           content: "~ ";
