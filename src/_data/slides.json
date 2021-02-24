@@ -2,7 +2,7 @@
   "title": "Building Forms Your Mobile Users Will Love",
   "description": "Increasing revenue and accessibility on mobile devices by building better inputs",
   "subtitle": "EmberConf 2021",
-  "colophonImage": "/images/emberconf-logo.svg",
+  "colophonImage": "./images/emberconf-logo.svg",
   "colophonAlt": "Virtual EmberConf 2021",
   "colophonURL": "https://jdsteinbach.com/emberconf-inputs",
   "colophonShortURL": "jds.li/ember-inputs"
