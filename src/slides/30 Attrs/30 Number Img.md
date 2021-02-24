@@ -1,1 +1,1 @@
-![input with type date](/images/input-type-number.png)
+![input with type date](./images/input-type-number.png)

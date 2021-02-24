@@ -10,8 +10,8 @@
   />
   ```
 
-  ![Android keyboard: address](/images/android-address.png)
+  ![Android keyboard: address](./images/android-address.png)
 
-  ![iOS keyboard: address](/images/ios-address.png)
+  ![iOS keyboard: address](./images/ios-address.png)
 
 </div>

@@ -12,8 +12,8 @@
   />
   ```
 
-  ![Android keyboard: username](/images/android-username.png)
+  ![Android keyboard: username](./images/android-username.png)
 
-  ![iOS keyboard: username](/images/ios-username.png)
+  ![iOS keyboard: username](./images/ios-username.png)
 
 </div>
