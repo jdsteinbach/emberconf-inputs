@@ -1,1 +1,1 @@
-![autocomplete](/images/autocomplete.png)
+![autocomplete](./images/autocomplete.png)

@@ -9,8 +9,8 @@
   />
   ```
 
-  ![Android keyboard: email](/images/android-email.png)
+  ![Android keyboard: email](./images/android-email.png)
 
-  ![iOS keyboard: email](/images/ios-email.png)
+  ![iOS keyboard: email](./images/ios-email.png)
 
 </div>

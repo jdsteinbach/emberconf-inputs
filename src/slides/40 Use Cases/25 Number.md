@@ -9,9 +9,9 @@
   />
   ```
 
-  ![Android keyboard: number](/images/android-number.png)
+  ![Android keyboard: number](./images/android-number.png)
 
-  ![iOS keyboard: number](/images/ios-number.png)
+  ![iOS keyboard: number](./images/ios-number.png)
 
 </div>
 
