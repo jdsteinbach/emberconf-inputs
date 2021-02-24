@@ -204,11 +204,9 @@ body {
   --font-casl: 0;
   --font-ital: 0;
   --font-wght: 450;
-  margin-top: 1em;
   display: block;
   font-style: italic;
   font-size: 2rem;
-  text-align: right;
 }
 .reveal section blockquote cite::before {
   content: "~ ";
