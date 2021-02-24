@@ -3,7 +3,7 @@
   <legend>Start Date</legend>
 
   <label for="month">Month (MM)</label>
-  <input type="month" inputmode="decimal" />
+  <input id="month" inputmode="decimal" />
 
   <label for="day">Day (DD)</label>
   <input id="day" type="text" inputmode="decimal" />

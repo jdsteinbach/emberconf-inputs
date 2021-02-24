@@ -1,5 +1,5 @@
 ### And More
 
 - URLs
-- Credit Cards, Dates, CVV
+- Credit Cards, Expiration Dates, CVV
 - Birthdays
