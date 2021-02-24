@@ -211,6 +211,10 @@ body {
 .reveal section blockquote cite::before {
   content: "~ ";
 }
+.reveal section blockquote strong {
+  --font-slnt: -15;
+  font-size: 0.85em;
+}
 .reveal section em {
   --font-slnt: 0;
   font-style: normal;
