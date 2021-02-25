@@ -1,5 +1,5 @@
 ---
-data-auto-animate: true
+data-auto-animatex: true
 ---
 ### Foundation
 
