@@ -68,9 +68,9 @@
 </section>
 
         
-          <section data-auto-animate="true">
+          <section data-auto-animatex="true">
   <h3>Foundation</h3>
-<pre><code class="hljs language-html" data-id="foundation" data-line-numbers="true" data-trim="true"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
   Username
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
@@ -79,18 +79,18 @@
 </section>
 
         
-          <section data-auto-animate="true">
+          <section data-auto-animatex="true">
   <h3>Foundation</h3>
-<pre><code class="hljs language-html" data-id="foundation" data-line-numbers="true" data-trim="true"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> /&gt;</span>
 </code></pre>
 
 </section>
 
         
-          <section data-auto-animate="true">
+          <section data-auto-animatex="true">
   <h3>Foundation</h3>
-<pre><code class="hljs language-hbs" data-id="foundation" data-line-numbers="true" data-trim="true"><span class="hljs-template-tag">{{#<span class="hljs-name">let</span> (<span class="hljs-name">unique-id</span>) <span class="hljs-keyword">as</span> |usernameId|}}</span><span class="xml">
+<pre><code class="hljs language-hbs"><span class="hljs-template-tag">{{#<span class="hljs-name">let</span> (<span class="hljs-name">unique-id</span>) <span class="hljs-keyword">as</span> |usernameId|}}</span><span class="xml">
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=</span></span><span class="hljs-template-variable">{{<span class="hljs-name">usernameId</span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=</span></span><span class="hljs-template-variable">{{<span class="hljs-name">usernameId</span>}}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> /&gt;</span>
 </span><span class="hljs-template-tag">{{/<span class="hljs-name">let</span>}}</span><span class="xml">
@@ -100,9 +100,9 @@
 </section>
 
         
-          <section data-auto-animate="true">
+          <section data-auto-animatex="true">
   <h3>Foundation</h3>
-<pre><code class="hljs language-html" data-id="foundation" data-line-numbers="true" data-trim="true"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
   <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-hint"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-hint"</span>&gt;</span>Username must be
@@ -179,14 +179,25 @@ A11Y API Mappings (AAM)</a></p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
   <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
   <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"username"</span>
-  <span class="hljs-attr">autocorrect</span>=<span class="hljs-string">"off"</span>
-  <span class="hljs-attr">autocapitalize</span>=<span class="hljs-string">"none"</span>
-  <span class="hljs-attr">spellcheck</span>=<span class="hljs-string">"false"</span>
 /&gt;</span>
 </code></pre>
 <p><img src="./images/android-username.png" alt="Android keyboard: username"></p>
 <p><img src="./images/ios-username.png" alt="iOS keyboard: username"></p>
 </div>
+
+</section>
+
+        
+          <section>
+  <h3>Username</h3>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+  <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"username"</span>
+  <span class="hljs-attr">autocorrect</span>=<span class="hljs-string">"off"</span>
+  <span class="hljs-attr">autocapitalize</span>=<span class="hljs-string">"none"</span>
+  <span class="hljs-attr">spellcheck</span>=<span class="hljs-string">"false"</span>
+/&gt;</span>
+</code></pre>
 
 </section>
 
