@@ -76,7 +76,7 @@ body {
   font-variation-settings: "MONO" var(--font-mono, 0), "CASL" var(--font-casl, 0), "wght" var(--font-wght, 200), "slnt" var(--font-slnt, 0), "CRSV" var(--font-ital, 0);
 }
 .reveal section {
-  --font-wght: 450;
+  --font-wght: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-feature-settings: liga frac ordn;
@@ -98,7 +98,7 @@ body {
   text-shadow: 0.5px 0.5px 0 var(--text-shadow-color), 1px 1px 0 var(--text-shadow-color), 1.5px 1.5px 0 var(--text-shadow-color), 2px 2px 0 var(--text-shadow-color);
 }
 .reveal section h1 {
-  --font-wght: 700;
+  --font-wght: 800;
   margin: 0;
 }
 .reveal section h1 em {
@@ -106,12 +106,12 @@ body {
   color: var(--mainColor);
 }
 .reveal section h2 {
-  --font-wght: 700;
+  --font-wght: 800;
   --text-shadow-color: var(--shadowColor);
   color: var(--mainColor);
 }
 .reveal section h2 em {
-  --font-wght: 700;
+  --font-wght: 800;
   --text-shadow-color: var(--shadowColorAlt);
   color: var(--headingColor);
 }
@@ -119,10 +119,10 @@ body {
   font-size: 3em;
 }
 .reveal section h3 {
-  --font-wght: 700;
+  --font-wght: 800;
 }
 .reveal section h3 em {
-  --font-wght: 700;
+  --font-wght: 800;
   --text-shadow-color: var(--shadowColor);
   color: var(--mainColor);
 }
@@ -152,7 +152,7 @@ body {
 }
 .reveal section p,
 .reveal section li {
-  --font-wght: 450;
+  --font-wght: 400;
   margin-left: auto;
   margin-right: auto;
   width: 20em;
@@ -161,12 +161,12 @@ body {
 }
 .reveal section p em,
 .reveal section li em {
-  --font-wght: 700;
+  --font-wght: 800;
   color: var(--accentColor);
 }
 .reveal section p code,
 .reveal section li code {
-  --font-wght: 450;
+  --font-wght: 400;
 }
 .reveal section p a,
 .reveal section li a {
@@ -203,7 +203,7 @@ body {
   --font-slnt: 1;
   --font-casl: 0;
   --font-ital: 0;
-  --font-wght: 450;
+  --font-wght: 400;
   display: block;
   font-style: italic;
   font-size: 2rem;
@@ -220,7 +220,7 @@ body {
   font-style: normal;
 }
 .reveal section .big-p {
-  --font-wght: 700;
+  --font-wght: 800;
   font-size: 3em;
   text-transform: uppercase;
   text-align: center;
@@ -235,7 +235,7 @@ body {
 }
 .reveal section code {
   --font-mono: 1;
-  --font-wght: 450;
+  --font-wght: 400;
   font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
   color: var(--codeColor);
 }
@@ -251,7 +251,7 @@ body {
 .reveal section h2 code,
 .reveal section h3 code,
 .reveal section h4 code {
-  --font-wght: 700;
+  --font-wght: 800;
   color: inherit;
 }
 .reveal section pre {
@@ -282,13 +282,13 @@ body {
   text-align: center;
 }
 .reveal section .t-emphasis {
-  --font-wght: 700;
+  --font-wght: 800;
   font-family: Recursive, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
   color: var(--accentColor);
   border-bottom: 0.125em solid #998bb8;
 }
 .reveal section .t-bold {
-  --font-wght: 700;
+  --font-wght: 800;
 }
 .reveal section .center {
   text-align: center;
@@ -393,7 +393,7 @@ body {
   --font-slnt: -15;
 }
 .reveal .hljs-strong {
-  --font-wght: 700;
+  --font-wght: 800;
 }
 .reveal .hljs mark {
   position: relative;
