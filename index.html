@@ -249,6 +249,8 @@ A11Y API Mappings (AAM)</a></p>
   <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span>
 /&gt;</span>
 </code></pre>
+<p>“inappropriate for credit card numbers or US postal codes”<br>
+(<a href="https://html.spec.whatwg.org/multipage/input.html#when-number-is-not-appropriate">HTML Spec</a>)</p>
 
 </section>
 
@@ -259,11 +261,13 @@ A11Y API Mappings (AAM)</a></p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
   <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
   <span class="hljs-attr">inputmode</span>=<span class="hljs-string">"decimal"</span>
+  <span class="hljs-attr">pattern</span>=<span class="hljs-string">"[0-9]*"</span>
 /&gt;</span>
 </code></pre>
 <p><img src="./images/android-number.png" alt="Android keyboard: number"></p>
 <p><img src="./images/ios-number.png" alt="iOS keyboard: number"></p>
 </div>
+<p><a href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">GOV.UK Number Inputs</a></p>
 <p><a href="https://kilianvalkhof.com/2020/javascript/supercharging-input-type-number/">Supercharged Number Inputs</a></p>
 
 </section>
