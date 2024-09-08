@@ -1,0 +1,145 @@
+.employee {
+  padding: 2rem;
+  display: grid;
+  grid-template:
+    "photo header" auto
+    "photo awards" auto
+    "bio awards" 1fr /
+    30% 1fr;
+  gap: 1rem 3rem;
+  text-align: left;
+  border-radius: .25em;
+  border: 1px solid mix($-shadowColor, $-mainColor);
+  color: $-mainColor;
+  background-color: $-backgroundColor;
+  box-shadow:
+    0 .25em 1em -.5em $-shadowColor,
+    0 .0625em .25em -.125em $-shadowColor;
+
+  > span {
+    --font-wght: #{$fontWeightBold};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    color: $-backgroundColor;
+    text-shadow: 0 1px 2px $-shadowColorAlt;
+    background-color: rgba($-linkColor, .75);
+
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}) {
+        grid-row-start: if($i > 3, $i - 3, $i);
+        grid-row-end: span 1;
+        grid-column-start: if($i > 3, 2, 1);
+        grid-column-end: span 1;
+      }
+    }
+  }
+}
+
+.step:nth-child(2).current-fragment ~ .employee,
+.employee--2 {
+  margin: 0 auto;
+  max-width: 600px;
+  max-height: 600px;
+  grid-template:
+    "photo header" auto
+    "bio bio" auto
+    "awards awards" 1fr /
+    150px 1fr;
+  gap: 1rem;
+}
+
+.step:nth-child(3).current-fragment ~ .employee,
+.employee--3 {
+  margin: 0 auto;
+  max-width: 400px;
+  max-height: 600px;
+  grid-template:
+    "photo" auto
+    "header" 1fr /
+     1fr;
+  gap: 1rem;
+
+  .employee__photo {
+    max-width: 250px;
+  }
+
+  .employee__header {
+    text-align: center;
+  }
+
+  .employee__awards,
+  .employee__bio {
+    display: none;
+  }
+}
+
+.employee__photo {
+  margin: 0 auto;
+  grid-area: photo;
+
+  img {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    display: block;
+    border-width: 0;
+  }
+}
+
+.employee__header {
+  grid-area: header;
+}
+
+.employee__title {
+  --font-wght: #{$fontWeightBold};
+}
+
+.employee__subtitle {
+  font-size: (1em / 1.25);
+  opacity: 0.75;
+}
+
+.employee__contact {
+  margin-top: 0.5rem;
+  font-size: (1em / 1.75);
+  opacity: 0.75;
+
+  a, span {
+    display: block;
+  }
+}
+
+.employee__bio {
+  grid-area: bio;
+
+  font-size: (1em / 1.75);
+}
+
+.employee__awards {
+  grid-area: awards;
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+
+  li {
+    margin: 0 0 0 1em;
+    padding: 0 0 0 .25em;
+    list-style: circle;
+    font-size: (1em / 1.5);
+    opacity: 0.75;
+    color: inherit;
+  }
+}
+
+.awards-title {
+  --font-wght: #{$fontWeightBold};
+
+  margin-bottom: 0.5rem;
+  font-size: (1em / 1.25);
+}

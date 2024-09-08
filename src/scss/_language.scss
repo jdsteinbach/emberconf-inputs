@@ -1,0 +1,26 @@
+.language-grid {
+  display: grid;
+  grid-template:
+    "a   b   e" 15vmin
+    "a   c   d" 15vmin /
+     1fr 50% 15%;
+  gap: .5rem;
+
+  > * {
+    --font-wght: #{$fontWeightBold};
+
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $-backgroundColor;
+    text-shadow: 0 1px 2px $-shadowColorAlt;
+    background-color: $shadowColor;
+  }
+}
+
+@each $child in (a b c d e) {
+  .language-grid__#{$child} {
+    grid-area: #{$child};
+  }
+}

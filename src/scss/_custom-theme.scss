@@ -1,0 +1,439 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "css/theme/template/mixins";
+@import "css/theme/template/settings";
+// ---------------------------------------------
+
+$-primaryColor: #e04e39;
+$-secondaryColor: #1e719b;
+
+// Light Colors
+$-mainColor: #131313;
+$-headingColor: mix($-primaryColor, $-mainColor, 95%);
+
+$-backgroundColor: #ececec;
+$-backgroundColorAlt: rgba($-headingColor, .25);
+$-shadowColor: $-primaryColor;
+$-shadowColorAlt: $-mainColor;
+
+$-linkColor: $-secondaryColor;
+$-linkColorHover: darken($-linkColor, 10%);
+$-selectionBackgroundColor: lighten($-linkColor, 20%);
+
+$-accentColor: mix($-headingColor, $-mainColor, 45%);
+$-codeColor: mix($-shadowColor, $-mainColor, 25%);
+
+//Dark Colors
+$-mainColor--dark: #ececec;
+$-headingColor--dark: mix($-primaryColor, $-mainColor--dark, 75%);
+
+$-backgroundColor--dark: #131313;
+$-backgroundColorAlt--dark: rgba($-headingColor--dark, .25);
+$-shadowColorAlt--dark: darken($-secondaryColor, 20%);
+$-shadowColor--dark: $-primaryColor;
+
+$-linkColor--dark: lighten($-secondaryColor, 30%);
+$-linkColorHover--dark: lighten($-linkColor--dark, 10%);
+$-selectionBackgroundColor--dark: lighten($-linkColor--dark, 20%);
+
+$-accentColor--dark: mix($-headingColor--dark, $-mainColor--dark, 45%);
+$-codeColor--dark: mix($-shadowColor--dark, $-mainColor--dark, 25%);
+
+:root {
+  --mainColor: #{$-mainColor};
+  --headingColor: #{$-headingColor};
+
+  --backgroundColor: #{$-backgroundColor};
+  --backgroundColorAlt: #{$-backgroundColorAlt};
+  --shadowColor: #{$-shadowColor};
+  --shadowColorAlt: #{$-shadowColorAlt};
+
+  --linkColor: #{$-linkColor};
+  --linkColorHover: #{$-linkColorHover};
+  --selectionBackgroundColor: #{$-selectionBackgroundColor};
+
+  --accentColor: #{$-accentColor};
+  --codeColor: #{$-codeColor};
+
+  --dyColor: #000;
+
+  @media (prefers-color-scheme: dark) {
+    --mainColor: #{$-mainColor--dark};
+    --headingColor: #{$-headingColor--dark};
+
+    --backgroundColor: #{$-backgroundColor--dark};
+    --backgroundColorAlt: #{$-backgroundColorAlt--dark};
+    --shadowColor: #{$-shadowColor--dark};
+    --shadowColorAlt: #{$-shadowColorAlt--dark};
+
+    --linkColor: #{$-linkColor--dark};
+    --linkColorHover: #{$-linkColorHover--dark};
+    --selectionBackgroundColor: #{$-selectionBackgroundColor--dark};
+
+    --accentColor: #{$-accentColor--dark};
+    --codeColor: #{$-codeColor--dark};
+
+    --dyColor: #fff;
+  }
+}
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: #{var(--mainColor)};
+$headingColor: #{var(--headingColor)};
+
+$backgroundColor: #{var(--backgroundColor)};
+$backgroundColorAlt: #{var(--backgroundColorAlt)};
+$shadowColor: #{var(--shadowColor)};
+$shadowColorAlt: #{var(--shadowColorAlt)};
+
+$linkColor: $-linkColor;
+$linkColorHover: #{var(--linkColorHover)};
+$selectionBackgroundColor: #{var(--selectionBackgroundColor)};
+
+$accentColor: #{var(--accentColor)};
+$codeColor: #{var(--codeColor)};
+
+$mainFontSize: 2rem;
+$mainFont: $default-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$codeFont: $default-font, SF Mono, Operator Mono, Input Code, Source Code Pro, monospace;
+$headingFont: $mainFont;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+
+$heading1Size: 2em;
+$heading2Size: 1.75em;
+$heading3Size: 1.5em;
+$heading4Size: 1.25em;
+
+$fontWeightLight: 400;
+$fontWeightNormal: 550;
+$fontWeightBold: 700;
+
+$blockMargin: $mainFontSize / 1.5;
+$headingMargin: 0 0 $blockMargin;
+
+*,
+::before,
+::after  {
+  font-variation-settings:
+    "MONO" var(--font-mono, 0),
+    "CASL" var(--font-casl, 0),
+    "wght" var(--font-wght, #{$fontWeightLight}),
+    "slnt" var(--font-slnt, 0),
+    "ital" var(--font-ital, .5);
+}
+
+section.has-light-background {
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $backgroundColor;
+  }
+}
+
+body {
+  font-family: $mainFont !important;
+}
+
+.reveal section {
+  // OVERLAY FIX
+  &[aria-hidden="true"],
+  &[aria-hidden="true"] * {
+    pointer-events: none !important;
+  }
+
+  --font-wght: #{$fontWeightLight};
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-feature-settings: liga frac ordn;
+  hyphens: none;
+
+  h1,
+  h2,
+  h3 {
+    --text-shadow-color: #{$shadowColorAlt};
+
+    &,
+    em {
+      text-shadow: .5px .5px 0 var(--text-shadow-color),
+                  1px 1px 0 var(--text-shadow-color),
+                  1.5px 1.5px 0 var(--text-shadow-color),
+                  2px 2px 0 var(--text-shadow-color);
+    }
+  }
+
+  h1 {
+    --font-wght: #{$fontWeightBold};
+
+    margin: 0;
+
+    em {
+      --text-shadow-color: #{$shadowColor};
+
+      color: $mainColor;
+    }
+  }
+
+  h2 {
+    --font-wght: #{$fontWeightNormal};
+    --text-shadow-color: #{$shadowColor};
+
+    color: $mainColor;
+
+    em {
+      --font-wght: #{$fontWeightBold};
+      --text-shadow-color: #{$shadowColorAlt};
+
+      color: $headingColor;
+    }
+
+    &.big {
+      font-size: $heading1Size;
+    }
+  }
+
+  h3 {
+    --font-wght: #{$fontWeightNormal};
+
+    em {
+      --font-wght: #{$fontWeightBold};
+      --text-shadow-color: #{$shadowColor};
+
+      color: $mainColor;
+    }
+  }
+
+  h3 {
+    --font-wght: #{$fontWeightNormal};
+
+    &.big {
+      font-size: $heading2Size;
+    }
+  }
+
+  h4 {
+    font-size: $heading4Size;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    & + p,
+    & + ul,
+    & + pre {
+      margin-top: 1em;
+    }
+  }
+
+  p,
+  li {
+    --font-wght: #{$fontWeightLight};
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+    max-width: 100%;
+    text-align: center;
+
+    em {
+      --font-wght: #{$fontWeightBold};
+
+      color: $accentColor;
+    }
+
+    code {
+      --font-wght: #{$fontWeightNormal};
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    margin: $blockMargin 0;
+    display: block;
+    text-align: left;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  blockquote {
+    padding: .5em;
+    background-color: $backgroundColorAlt;
+  }
+
+  blockquote > p {
+    font-size: $heading1Size;
+    text-shadow: .5px .5px 0 $shadowColor,
+                 1px 1px 0 $shadowColor;
+  }
+
+  em {
+    --font-slnt: 0;
+
+    font-style: normal;
+  }
+
+  .big-p {
+    --font-wght: #{$fontWeightBold};
+
+    font-size: $heading1Size;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .output {
+    background-color: rgba($mainColor, .1);
+    text-align: left;
+    font-size: .8em;
+
+    > * {
+      background-color: $shadowColor;
+    }
+  }
+
+  code {
+    --font-mono: 1;
+    --font-wght: #{$fontWeightNormal};
+
+    font-family: $codeFont;
+    color: $codeColor;
+
+    &::before,
+    &::after {
+      --font-wght: #{$fontWeightLight};
+
+      content: '`';
+      opacity: 0.6;
+    }
+
+    mark {
+      background-color: transparent;
+    }
+  }
+
+  h1 code,
+  h2 code,
+  h3 code,
+  h4 code {
+    --font-wght: #{$fontWeightBold};
+
+    color: inherit;
+  }
+
+  pre {
+    font-size: 1em;
+
+    &.small {
+      font-size: .825em;
+    }
+
+    &.tiny {
+      font-size: .7em;
+    }
+
+    code {
+      max-height: 100%;
+      font-size: 75%;
+      background-color: rgba($mainColor, .05);
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  table {
+    th {
+      vertical-align: bottom;
+    }
+    th,
+    td {
+      text-align: center;
+    }
+  }
+
+  .t-emphasis {
+    --font-wght: #{$fontWeightBold};
+
+    font-family: $codeFont;
+    color: $accentColor;
+    border-bottom: .125em solid $linkColor;
+  }
+
+  .t-bold {
+    --font-wght: #{$fontWeightBold};
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .hidden-label {
+    display: none;
+  }
+
+  .invisible-hr {
+    border: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  .d-block {
+    display: block;
+  }
+
+  .mb-1 {
+    margin-bottom: $blockMargin;
+  }
+
+  .mb-2 {
+    margin-bottom: $blockMargin * 2;
+  }
+
+  .bg-light {
+    background: rgba($mainColor, .7);
+    backdrop-filter: blur(5px);
+  }
+
+  .logo--dockyard {
+    margin-left: 1ch;
+    max-width: 1em;
+    max-height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+iframe {
+  border-width: 0;
+}
+
+// Theme template ------------------------------
+@import "css/theme/template/theme";
+
+// ---------------------------------------------

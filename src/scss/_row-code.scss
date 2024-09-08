@@ -1,0 +1,68 @@
+.row-code {
+  margin: 0 0 2em;
+  padding: 0.25ch;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, min-content);
+  grid-template-rows: auto;
+  gap: .25ch;
+  justify-content: center;
+  align-items: stretch;
+  outline: .25ch solid transparent;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  span {
+    --span-bg: #{$shadowColorAlt};
+
+    padding: .25ch;
+    background-color: transparent;
+    text-shadow: 0 1px 2px $backgroundColor;
+
+    &:nth-child(even) {
+      --span-bg: #{$shadowColor};
+    }
+  }
+
+  &.override > :not(.preoverride) {
+    display: none;
+  }
+
+  &.visible {
+    animation: illustrateRows .5s 1.5s forwards;
+
+    span:not(.preoverride) {
+      animation: illustrateRowSpanOverride .5s 1.5s forwards;
+    }
+
+    span.preoverride {
+      animation: illustrateRowSpanPreoverride .5s 1.5s forwards;
+    }
+  }
+}
+
+@keyframes illustrateRows {
+  to {
+    width: 100%;
+    grid-auto-flow: row;
+    grid-template-rows: var(--rows);
+    grid-template-columns: 1fr;
+    outline-color: $linkColor;
+  }
+}
+
+@keyframes illustrateRowSpanPreoverride {
+  to {
+    display: none !important;
+  }
+}
+
+@keyframes illustrateRowSpanOverride {
+  to {
+    display: inline !important;
+    background-color: var(--span-bg);
+  }
+}

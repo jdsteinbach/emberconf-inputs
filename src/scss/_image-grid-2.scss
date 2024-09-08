@@ -1,0 +1,47 @@
+.image-grid-2 {
+  margin: 0 auto;
+  padding: 10px;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "i1 i1 i2 i3" 1fr
+    "i1 i1 i4 i3" 1fr
+    "i6 i7 i4 i5" 1fr
+    "i6 i8 i8 i9" 1fr/
+    1fr 1fr 1fr 1fr;
+  background-color: $-backgroundColor;
+  border: 1px solid mix($-shadowColor, $-mainColor);
+  box-shadow:
+    0 .25em 1em -.5em $-shadowColor,
+    0 .0625em .25em -.125em $-shadowColor;
+
+  > span {
+    --font-wght: #{$fontWeightBold};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $-backgroundColor;
+    text-shadow: 0 1px 2px $-shadowColorAlt;
+    background-position: center;
+    background-size: cover;
+
+    @for $i from 1 through 41 {
+      &:nth-child(#{$i}) {
+        grid-area: i#{$i};
+        background-image:
+          linear-gradient(rgba(#000, .3), rgba(#000, .3)),
+          url("https://picsum.photos/400?image=#{$i+50}");
+      }
+    }
+  }
+}
+
+.image-grid__inner {
+  display: grid !important;
+  grid-template-columns: repeat(var(--colspan, 1), 1fr);
+  grid-template-rows: repeat(var(--rowspan, 1), 1fr);
+  gap: inherit;
+}

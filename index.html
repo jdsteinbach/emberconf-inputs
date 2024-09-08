@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="slides">
+        {{slides}}
+      </div>
+
+      <div class="colophon">
+        <img src="{{colophonImage}}" alt="{{colophonAlt}}" class="colophon__logo">
+        <a class="colophon__link" href="{{colophonURL}}">{{colophonShortURL}}</a>
+      </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    <script>
+      Vue.component('column-code', {
+        data() {
+          return {}
+        },
+        props: {
+          override: {
+            type: String,
+            default: ''
+          }
+        },
+        computed: {
+          templateColumns() {
+            return this.override || this.$slots.default[0].text
+          },
+          columns() {
+            if (!this.templateColumns) {
+              return '<span>No Content Available</span>'
+            }
+            return this.templateColumns.split(' ')
+          },
+          columnStyle() {
+            return {
+              '--columns': this.templateColumns
+            }
+          }
+        },
+        template: '<code class="column-code fragment" :class="{override: override}" :style="columnStyle"><span v-if="override" class="preoverride"><slot/></span><span v-for="(col, i) in columns" :key="`${i}-${col}`" :data-key="`${i}-${col}`">{{col}}</span></code>'
+      })
+
+      Vue.component('row-code', {
+        data() {
+          return {}
+        },
+        props: {
+          override: {
+            type: String,
+            default: ''
+          }
+        },
+        computed: {
+          templateRows() {
+            return this.override || this.$slots.default[0].text
+          },
+          rows() {
+            if (!this.templateRows) {
+              return '<span>No Content Available</span>'
+            }
+            const splitRows = this.templateRows.split(' ')
+            const outputRows = []
+            splitRows.map(r => {
+              if (r.indexOf('r') === 0) {
+                r = r.replace('&nbsp;', ' ')
+                const matches = r.match(/\((.*?),/)
+                console.log(r, matches)
+                const [ original, count ] = matches
+                for(let i = 0; i < count; i++) {
+                  if (i === 0) {
+                    outputRows.push(r)
+                  } else {
+                    outputRows.push('')
+                  }
+                }
+              } else {
+                outputRows.push(r)
+              }
+            })
+            return outputRows
+          },
+          rowStyle() {
+            return {
+              '--rows': this.templateRows.replace('&nbsp;', ' ')
+            }
+          }
+        },
+        template: '<code class="row-code fragment" :style="rowStyle"><span v-for="(row, i) in rows" :key="`${i}-${row}`" :data-key="`${i}-${row}`">{{row}}</span></code>'
+      })
+
+      new Vue({
+        el: '#slides'
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.grid-properties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: .8em;
+
+  p {
+    margin: .5rem 1.5rem;
+    width: auto;
+    display: inline-block;
+    font-size: 1.25em;
+  }
+
+  hr {
+    flex: 1 0 100%;
+  }
+
+  &.grid-properties--small p {
+    font-size: .75em;
+  }
+}
